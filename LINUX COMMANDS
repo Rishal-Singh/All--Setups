@@ -1,0 +1,40 @@
+LINUX COMMANDS
+
+mkdir rishal		: to create a folder
+cd rishal		: to go inside rishal folder
+pwd			: to print working directory
+ls/ll			: to list files and folders
+
+
+touch file1		: to create a file
+cat file1		: to show content of a file
+cat>file1		: to insert the content in a file
+enter ctrl d		: to save the content in a file
+
+vim abcd		: to open file in editor mode
+i			: to insert the content
+ecs :wq			: to save and exit
+
+cp file1 file2		: to copy content from file1 to file2
+mv file1 rishal		: will rename file1 to rishal
+rm rishal		: to remove rishal file
+rm *			: to remove all files
+.			: current folder
+
+cat -n file1		: to print content with line numbers
+wc file1		: to print lines, words and charcterts
+
+
+head file1		: to print top 10 lines of a file
+head -5 file1		: to print top 5 lines of a file
+head -7 file1		: to print top 7 lines of a file
+head -12 file1		: to print top 12 lines of a file
+
+
+tail file1		: to print bottom 10 lines of a file
+tail -5 file1		: to print bottom 5 lines of a file
+tail -7 file1		: to print bottom 7 lines of a file
+tail -12 file1		: to print bottom 12 lines of a file
+
+sed -n '10,16p' file1	: to print 10 to 16 lines in file1
+sed -n '5,15p' file1	: to print 5 to 15 lines in file1
