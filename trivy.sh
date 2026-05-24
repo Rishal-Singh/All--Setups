@@ -1,6 +1,20 @@
-wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.tar.gz
-tar zxvf trivy_0.18.3_Linux-64bit.tar.gz
-sudo mv trivy /usr/local/bin/
-vim .bashrc
-export PATH=$PATH:/usr/local/bin/
-source .bashrc 
+sudo apt update
+
+
+sudo apt install wget apt-transport-https gnupg lsb-release -y
+
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | \
+gpg --dearmor | \
+sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+
+echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | \
+sudo tee -a /etc/apt/sources.list.d/trivy.list
+
+sudo apt update
+sudo apt install trivy -y
+
+trivy --version
+
+========================================= install using docker ==================================================================
+
+docker run --rm aquasec/trivy image nginx:latest # if docker is already installed
