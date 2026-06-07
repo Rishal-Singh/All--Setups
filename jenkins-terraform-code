@@ -28,3 +28,24 @@ stage('Terraform Init') {
                     sh 'terraform destroy -auto-approve'
             }
         }
+
+========================================================== vim main.tf =========================================================================
+provider "aws" {
+region = "us-east-1"
+}
+
+resource "aws_instance" "one" {
+ami = "ami-091138d0f0d41ff90"
+instance_type = "m7i-flex.large"
+
+key_name = "jenkins-key" (optional, used coz we need to ssh into the newly created ec2 after using this command "ssh-keygen -t rsa -f jenkins-key")
+
+}
+
+
+========================================================== vim output.tf =======================================================================
+
+output "public_ip" {
+  value = aws_instance.one.public_ip
+}
+
