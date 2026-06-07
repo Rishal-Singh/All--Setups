@@ -21,3 +21,10 @@ stage('Terraform Init') {
                     sh 'terraform apply -auto-approve tfplan'
             }
         }
+============================================================== for destroying the architucture =====================================================
+
+        stage('Terraform Apply') {
+            steps {
+                    sh 'terraform destroy -auto-approve'
+            }
+        }
