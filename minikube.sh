@@ -50,3 +50,7 @@ addons minikube:
 minikube addons enable metrics-server
 minikube addons enable ingress
 minikube addons enable dashboard
+
+commond error:
+------------------
+kubectl port-forward svc/noteapp-service 8000:80 --address 0.0.0.0
