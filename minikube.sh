@@ -8,6 +8,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 Docker:
+---------
 
 sudo apt install docker.io -y
 
@@ -22,6 +23,7 @@ newgrp docker
 docker ps
 
 Kubectl :
+---------------
 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
@@ -31,9 +33,8 @@ sudo mv kubectl /usr/local/bin/
 
 kubectl version --client
 
-Minikube:
-
-
+Minikube :
+----------
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
