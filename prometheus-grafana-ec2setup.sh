@@ -39,12 +39,14 @@ kubectl get secret monitoring-grafana \
 -o jsonpath="{.data.admin-password}" | base64 -d
 
 Access Prometheus
+
 kubectl port-forward svc/monitoring-kube-prometheus-prometheus \
 9090:9090 \
 -n monitoring --address 0.0.0.0
 
-nohup kubectl port-forward svc/monitoring-grafana 3000:80 \
--n monitoring --address 0.0.0.0 > prometheus-port-forward.log 2>&1 &
+nohup kubectl port-forward svc/monitoring-kube-prometheus-prometheus \
+9090:9090 -n monitoring --address 0.0.0.0 \
+> prometheus-port-forward.log 2>&1 &
 
 Open:
 
