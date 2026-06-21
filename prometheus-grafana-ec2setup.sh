@@ -24,7 +24,7 @@ kubectl port-forward svc/monitoring-grafana \
 3000:80 \
 -n monitoring --address 0.0.0.0
 
-run it background:
+run GRAFANA at background:
 
 nohup kubectl port-forward svc/monitoring-grafana 3000:80 \
 -n monitoring --address 0.0.0.0 > grafana-port-forward.log 2>&1 &
@@ -43,6 +43,8 @@ Access Prometheus
 kubectl port-forward svc/monitoring-kube-prometheus-prometheus \
 9090:9090 \
 -n monitoring --address 0.0.0.0
+
+Run PROMETHEUS at background
 
 nohup kubectl port-forward svc/monitoring-kube-prometheus-prometheus \
 9090:9090 -n monitoring --address 0.0.0.0 \
